@@ -277,14 +277,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1791935566}
     m_Modifications:
-    - target: {fileID: 112550778, guid: 5ede5977def57c1478c210473b95a625, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 529128296, guid: 5ede5977def57c1478c210473b95a625, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 3228730547954050313, guid: 5ede5977def57c1478c210473b95a625, type: 3}
       propertyPath: m_Name
       value: FingerTouch Variant
