@@ -16,9 +16,9 @@ MonoBehaviour:
   clientTokens:
   - 
   appIds:
-  - 820218928840006
+  - 2165381260260025
   appLabels:
-  - TinySauce-Unity-SDK
+  - DigWater
   cookie: 1
   logging: 1
   status: 1

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Water2D;
 
+
 public class GameController : MonoBehaviour
 {
     //bool hasColorBlending;
@@ -36,9 +37,16 @@ public class GameController : MonoBehaviour
 
     public bool bucketLevel;
     int currentSceneIndex;
+    private bool levelComplete = false;
+
     private void Start()
     {
+        levelComplete = false;
+
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        TinySauce.OnGameStarted(levelNumber:(currentSceneIndex+1).ToString());
+        
 
         if (bucketLevel)
         {
@@ -99,6 +107,7 @@ public class GameController : MonoBehaviour
     public void RestartLevel()
     {
         SceneManager.LoadScene(currentSceneIndex);
+        TinySauce.OnGameFinished((currentSceneIndex + 1).ToString(), levelComplete, 0);
     }
 
     public void SetBucketFull(int number)
@@ -157,6 +166,10 @@ public class GameController : MonoBehaviour
 
     public void LevelComplete()
     {
+        levelComplete = true;
+
+        TinySauce.OnGameFinished((currentSceneIndex + 1).ToString(), levelComplete, 1);
+
         if (bucketLevel)
         {
             Debug.Log("level complete called");
