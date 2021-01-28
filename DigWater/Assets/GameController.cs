@@ -107,11 +107,13 @@ public class GameController : MonoBehaviour
         {
             case 1:
                 isBucketOneFull = true;
-                winStuff[4].SetActive(true);
+                //commented for bruteforce
+                //winStuff[4].SetActive(true);
                 break;
             case 2:
                 isBucketTwoFull = true;
-                winStuff[5].SetActive(true);
+                //commented for brute force
+                //winStuff[5].SetActive(true);
                 break;
         }
         if (isBucketOneFull && isBucketTwoFull)
@@ -151,25 +153,7 @@ public class GameController : MonoBehaviour
     //}
     #endregion
 
-    //public void SetWaterActive(int i)
-    //{
-    //    if (i == 1)
-    //    {
-    //        blueWater.SetActive(true);
-    //    }
-    //    else if (i == 2)
-    //    {
-    //        redWater.SetActive(true);
-    //    }
-    //}
-
-    //public void CheckTypeOfWater(bool isBlue, Collider2D other,Color blue, Color red)
-    //{
-    //    if (isBlue && other.GetComponent<SpriteRenderer>().color == blue)
-    //    {
-    //        IncreaseWater();
-    //    }
-    //}
+   
 
     public void LevelComplete()
     {
@@ -186,6 +170,7 @@ public class GameController : MonoBehaviour
             foreach (var stuff in winStuff)
             {
                 stuff.SetActive(true);
+                
             }
 
             foreach (var stuff in deactivateStuff)
@@ -194,11 +179,11 @@ public class GameController : MonoBehaviour
             }
         }
 
-        if (currentSceneIndex != 2) 
+        if (currentSceneIndex != 4) 
         { 
             StartCoroutine(LoadSceneAfterTime(currentSceneIndex+1));
         }
-        else if(currentSceneIndex == 2)
+        else if(currentSceneIndex == 4)
         {
             StartCoroutine(LoadSceneAfterTime(0));
         }     
